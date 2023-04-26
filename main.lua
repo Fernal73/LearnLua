@@ -14,3 +14,9 @@ conf = inifile.parse("config" .. d .. 'myconfig.ini')
 print(conf['example']['name'])
 print(conf['example']['species'])
 print(conf['example']['enabled'])
+
+-- set enabled to true
+conf['example']['enabled'] = true
+conf['demo']['enabled'] = true
+-- save the change
+inifile.save("config" .. d .. 'newconfig.ini', conf)
