@@ -1,5 +1,5 @@
 #!/usr/bin/env lua
-package.path = package.path .. ';/data/data/com.termux/files/usr/share/lua/5.1/?.lua'
+package.path = package.path .. ';' .. os.getenv('PREFIX') .. '/share/lua/5.1/?.lua'
 inifile = require('inifile')
 -- find home directory
 home = os.getenv('HOME')
