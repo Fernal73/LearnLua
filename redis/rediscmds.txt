@@ -1,0 +1,12 @@
+FCALL knockknock 0
+FCALL my_hgetall 1 myhash
+HGETALL myhash
+FCALL my_hgetall 1 myhash
+HGETALL myhash
+FCALL my_hlastmodified 1 myhash
+HGETALL myhash
+FUNCTION LIST
+FCALL my_hset 0 myhash nope nope
+FCALL my_hgetall 2 myhash anotherone
+FCALL_RO my_hgetall 1 myhash
+FCALL_RO my_hlastmodified 1 myhash
