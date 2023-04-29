@@ -54,6 +54,14 @@ redis.register_function(
   'knockknock',
   function() return 'Who\'s there?' end
 )
+redis.register_function{
+  function_name='my_hgetall',
+  callback=my_hgetall,
+  flags={ 'no-writes' }
+}
+redis.register_function{
+  function_name='my_hlastmodified',
+  callback=my_hlastmodified,
+  flags={ 'no-writes' }
+}
 redis.register_function('my_hset', my_hset)
-redis.register_function('my_hgetall', my_hgetall)
-redis.register_function('my_hlastmodified', my_hlastmodified)
