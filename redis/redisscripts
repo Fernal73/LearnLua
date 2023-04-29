@@ -12,4 +12,8 @@ sha="$(echo "SCRIPT LOAD \"return 'Immabe a cached script'\"" |
 echo "$sha"
 echo "EVALSHA ${sha} 0" | redis-cli -x -e
 echo "EVALSHA ffffffffffffffffffffffffffffffffffffffff 0" | redis-cli -x -e
+sha="$(redis-cli -x -e SCRIPT LOAD <pcall.lua)"
+echo "$sha"
+echo "EVALSHA ${sha} 0 hello" | redis-cli -x -e
+echo "EVALSHA ${sha} 0 hello world" | redis-cli -x -e
 redis-cli shutdown

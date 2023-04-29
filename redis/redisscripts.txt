@@ -5,3 +5,5 @@ EVAL "return ARGV[1]" 0 Hello
 EVAL "return ARGV[1]" 0 Parameterization!
 EVAL "return { KEYS[1], KEYS[2], ARGV[1], ARGV[2], ARGV[3] }" 2 key1 key2 arg1 arg2 arg3
 EVAL "return redis.call('SET', KEYS[1], ARGV[1])" 1 foo bar
+EVAL "return redis.call('ECHO', 'Echo,', 'echo... ', 'eco... ', 'o...')" 0
+EVAL "return redis.call('ECHO', 'Echo, echo... eco... o...')" 0
