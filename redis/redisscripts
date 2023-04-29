@@ -7,4 +7,8 @@ while IFS= read -r line; do
     echo "Error executing: ${line}"
   fi
 done <redisscripts.txt
+sha="$(echo "SCRIPT LOAD \"return 'Immabe a cached script'\"" |
+  redis-cli -x -e)"
+echo "$sha"
+echo "EVALSHA ${sha} 0" | redis-cli -x -e
 redis-cli shutdown
