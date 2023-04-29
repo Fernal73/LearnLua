@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+redis-server &
+while IFS= read -r line; do
+  if (echo "$line" | redis-cli -x -e); then
+    sleep 1s
+  else
+    echo "Error executing: ${line}"
+  fi
+done <redisscripts.txt
+redis-cli shutdown
