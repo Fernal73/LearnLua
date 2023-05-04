@@ -14,3 +14,23 @@ LLEN mylist
 LTRIM mylist 0 0
 LRANGE mylist 0 -1
 LLEN mylist
+SADD myset a
+SADD myset b
+SADD myset foo
+SADD myset bar
+SCARD myset
+SMEMBERS myset
+SADD mynewset b
+SADD mynewset foo
+SADD mynewset hello
+SINTER myset mynewset
+SISMEMBER myset foo
+SISMEMBER myset notamember
+ZADD zset 10 a
+ZADD zset 5 b
+ZADD zset 12.55 c
+ZRANGE zset 0 -1
+ZSCORE zset a
+ZSCORE zset non_existing_element
+HMSET myuser name Salvatore surname Sanfilippo country Italy
+HGET myuser surname
