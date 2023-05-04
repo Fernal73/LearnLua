@@ -16,4 +16,4 @@ sha="$(redis-cli -x -e SCRIPT LOAD <pcall.lua)"
 echo "$sha"
 echo "EVALSHA ${sha} 0 hello" | redis-cli -x -e
 echo "EVALSHA ${sha} 0 hello world" | redis-cli -x -e
-redis-cli shutdown
+redis-cli shutdown nosave

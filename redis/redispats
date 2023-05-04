@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 redis-server &
-redis-cli -x FUNCTION LOAD REPLACE <mylib.lua
 while IFS= read -r line; do
   if (echo "$line" | redis-cli -x -e); then
     sleep 1s
   else
     echo "Error executing: ${line}"
   fi
-done <rediscmds.txt
+done <redispats.txt
 redis-cli shutdown nosave

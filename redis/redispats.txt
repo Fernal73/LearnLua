@@ -1,0 +1,16 @@
+SET foo bar
+GET foo
+SET foo 10
+INCR foo
+INCR foo
+INCR foo
+LPUSH mylist a
+LRANGE mylist 0 -1
+LPUSH mylist b
+LRANGE mylist 0 -1
+LPUSH mylist c
+LRANGE mylist 0 -1
+LLEN mylist
+LTRIM mylist 0 0
+LRANGE mylist 0 -1
+LLEN mylist

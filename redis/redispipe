@@ -4,4 +4,4 @@ sleep 10s
 redis-cli -x FUNCTION LOAD REPLACE <mylib.lua
 redis-cli --pipe <rediscmds.txt
 redis-cli --pipe <redisscripts.txt
-redis-cli shutdown
+redis-cli shutdown nosave
