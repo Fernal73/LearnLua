@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+redis-server &
+redis-cli -x -e <redistrans.txt
+redis-cli shutdown nosave

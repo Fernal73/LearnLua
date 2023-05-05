@@ -1,0 +1,31 @@
+SET foo 0
+SET bar 0
+MULTI
+INCR foo
+INCR bar
+EXEC
+MULTI
+SET a abc
+LPOP a
+EXEC
+GET a
+MULTI
+INCR a b c
+DISCARD
+GET foo
+MULTI
+INCR foo
+DISCARD
+GET foo
+SET mykey 1
+WATCH mykey
+MULTI
+SET mykey $val
+EXEC
+ZADD zset 0 0
+ZADD zset 1 1
+WATCH zset
+MULTI
+ZREM zset 0
+EXEC
+ZRANGE zset 0 -1
